@@ -7,7 +7,7 @@
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-      "minimumReleaseAge": "3 days",
+      "minimumReleaseAge": "4 days",
       "schedule": ["every 2 weeks on Monday"]
     },
     {
