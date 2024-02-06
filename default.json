@@ -14,5 +14,8 @@
       "matchUpdateTypes": ["major"],
       "enabled": false
     }
-  ]
+  ],
+  "vulnerabilityAlerts": {
+    "enabled": false
+  }
 }
