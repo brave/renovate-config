@@ -6,7 +6,8 @@
   ],
   "packageRules": [
     {
-      "minimumReleaseAge": "3 days"
+      "minimumReleaseAge": "3 days",
+      "schedule": ["every 2 weeks on Monday"]
     }
   ]
 }
