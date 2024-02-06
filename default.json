@@ -3,5 +3,10 @@
   "extends": [
     "config:base",
     "helpers:pinGitHubActionDigests"
+  ],
+  "packageRules": [
+    {
+      "minimumReleaseAge": "3 days"
+    }
   ]
 }
