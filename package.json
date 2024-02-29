@@ -1,0 +1,25 @@
+{
+    "name": "renovate-config",
+    "version": "1.0.0",
+    "description": "Renovate configuration for Brave projects",
+    "scripts": {
+        "test": "npx --yes --package renovate -- renovate-config-validator --strict default.json"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/brave/renovate-config.git"
+    },
+    "keywords": [
+        "renovate",
+        "config"
+    ],
+    "author": "Andrea Brancaleoni <abrancaleoni@brave.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/brave/renovate-config/issues"
+    },
+    "homepage": "https://github.com/brave/renovate-config#README.md",
+    "dependencies": {
+        "renovate": "^37.220.2"
+    }
+}
