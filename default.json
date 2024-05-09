@@ -7,7 +7,7 @@
   ],
   "packageRules": [
     {
-      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchUpdateTypes": ["minor", "major", "patch", "pin", "digest"],
       "minimumReleaseAge": "4 days",
       "schedule": ["* 0-4 * * 3"]
     },
