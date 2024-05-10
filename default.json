@@ -18,6 +18,14 @@
     {
       "matchManagers": ["github-actions"],
       "enabled": true
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "matchUpdateTypes": ["patch", "minor", "pin", "digest"],
+      "matchCurrentAge": "> 2 weeks",
+      "matchRepositories": ["^actions/.*$", "^github/.*$", "^aws-actions/.*$"],
+      "autoApprove": true,
+      "automerge": true      
     }
   ],
   "vulnerabilityAlerts": {
