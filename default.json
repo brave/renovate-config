@@ -7,7 +7,7 @@
   ],
   "packageRules": [
     {
-      "matchUpdateTypes": ["minor", "major", "patch", "pin", "digest"],
+      "matchUpdateTypes": ["minor", "major", "patch", "pin", "pinDigest", "digest"],
       "minimumReleaseAge": "4 days",
       "schedule": ["* 0-4 * * 3"]
     },
@@ -21,7 +21,7 @@
     },
     {
       "matchManagers": ["github-actions"],
-      "matchUpdateTypes": ["patch", "minor", "pin", "digest"],
+      "matchUpdateTypes": ["patch", "minor", "pin", "pinDigest", "digest"],
       "matchCurrentAge": "> 2 weeks",
       "matchRepositories": ["^actions/.*$", "^github/.*$", "^aws-actions/.*$"],
       "autoApprove": true,
