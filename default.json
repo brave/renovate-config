@@ -26,6 +26,11 @@
       "matchRepositories": ["^actions/.*$", "^github/.*$", "^aws-actions/.*$"],
       "autoApprove": true,
       "automerge": true      
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "matchUpdateTypes": ["digest"],
+      "enabled": false
     }
   ],
   "vulnerabilityAlerts": {
