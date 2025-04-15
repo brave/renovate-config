@@ -5,6 +5,7 @@
       "helpers:pinGitHubActionDigestsToSemver",
       ":pinDevDependencies"
   ],
+  "branchNameStrict": true,
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "major", "patch", "pin", "pinDigest", "digest"],
