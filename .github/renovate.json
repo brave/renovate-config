@@ -2,5 +2,13 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "local>brave/renovate-config"
+  ],
+  "packageRules": [
+    {
+      "matchPackageNames": ["renovate"],
+      "matchManagers": ["npm"],
+      "automerge": true,
+      "autoApprove": true
+    }
   ]
 }
