@@ -17,13 +17,13 @@ Renovate is an automated dependency update tool that helps keep your dependencie
 
 ## Configuration Details
 
-The default configuration (`default.json`) includes:
+The default configuration (`default.json`):
 
 - Extends recommended Renovate configuration
 - Pins GitHub Action digests to semantic versions
 - Pins dev dependencies
 - Updates minor and patch versions on Tuesday-Thursday
-- Disables major version updates by default
+- Requires dashboard approval for major version updates
 - Enables GitHub Actions updates with auto-approval and auto-merge
 - Limits concurrent PRs to 1
 - Disables vulnerability alerts
