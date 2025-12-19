@@ -13,11 +13,6 @@
       "prCreation": "not-pending"
     },
     {
-      "matchUpdateTypes": ["major"],
-      "enabled": true,
-      "dependencyDashboardApproval": true
-    },
-    {
       "matchManagers": ["github-actions"],
       "enabled": true
     },
