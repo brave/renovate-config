@@ -10,8 +10,7 @@
     {
       "matchUpdateTypes": ["minor", "major", "patch", "pin", "pinDigest", "digest"],
       "minimumReleaseAge": "7 days",
-      "prCreation": "not-pending",
-      "schedule": ["* * * * 2-4"]
+      "prCreation": "not-pending"
     },
     {
       "matchUpdateTypes": ["major"],
