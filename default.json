@@ -14,11 +14,6 @@
       "schedule": ["* * * * 2-4"]
     },
     {
-      "matchUpdateTypes": ["major"],
-      "enabled": true,
-      "dependencyDashboardApproval": true
-    },
-    {
       "matchManagers": ["github-actions"],
       "enabled": true
     },
