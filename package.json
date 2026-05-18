@@ -21,5 +21,9 @@
     "homepage": "https://github.com/brave/renovate-config#README.md",
     "dependencies": {
         "renovate": "43.150.0"
+    },
+    "overrides": {
+      "simple-git": "3.36.0",
+      "protobufjs": "8.0.2"
     }
 }
