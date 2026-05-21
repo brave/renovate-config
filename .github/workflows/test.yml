@@ -24,8 +24,10 @@ jobs:
           with:
             node-version: '24.x'
 
-        - name: Validate Renovate config
-          run: npx --yes --package renovate -- renovate-config-validator default.json
+        - name: Validate Renovate configs
+          run: |
+            npx --yes --package renovate -- renovate-config-validator \
+              default.json lockfile-*.json enable-*.json
 
     needs_migration:
         runs-on: ubuntu-latest
@@ -37,5 +39,7 @@ jobs:
           with:
             node-version: '24.x'
 
-        - name: Validate Renovate config
-          run: npx --yes --package renovate -- renovate-config-validator --strict default.json
+        - name: Validate Renovate configs
+          run: |
+            npx --yes --package renovate -- renovate-config-validator --strict \
+              default.json lockfile-*.json enable-*.json
