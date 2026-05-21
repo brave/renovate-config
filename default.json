@@ -18,9 +18,10 @@
     },
     {
       "matchManagers": ["github-actions"],
-      "matchUpdateTypes": ["patch", "minor", "pin", "pinDigest", "digest"],
-      "matchCurrentAge": "> 2 weeks",
-      "matchRepositories": ["actions/**", "github/**", "aws-actions/**"],
+      "matchUpdateTypes": ["patch", "minor", "pin", "pinDigest"],
+      "matchCurrentAge": "> 7 days",
+      "matchPackageNames": ["actions/**", "github/**", "aws-actions/**"],
+      "minimumReleaseAge": "14 days",
       "autoApprove": true,
       "automerge": true
     },
