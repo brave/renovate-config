@@ -1,0 +1,7 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Enable lockfile maintenance PRs on the default schedule without dashboard approval. Merging is still manual.",
+  "lockFileMaintenance": {
+    "enabled": true
+  }
+}

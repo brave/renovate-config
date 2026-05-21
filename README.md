@@ -41,6 +41,28 @@ To use this configuration in your repository, add a `renovate.json` file with:
 }
 ```
 
+## Additional presets
+
+Alongside the default configuration, this repo ships opt-in presets you can layer on top. See Renovate's [config presets](https://docs.renovatebot.com/config-presets/) docs for how preset references are resolved.
+
+Reference a preset by appending its name after a colon, e.g.:
+
+```json
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "local>brave/renovate-config",
+    "local>brave/renovate-config:enable-vulnerability-alerts"
+  ]
+}
+```
+
+| Name                          | Example reference                                          | File                                                                       | Description                                                                                            |
+| ----------------------------- | ---------------------------------------------------------- | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| `enable-vulnerability-alerts` | `local>brave/renovate-config:enable-vulnerability-alerts` | [`enable-vulnerability-alerts.json`](enable-vulnerability-alerts.json)     | Re-enables Renovate vulnerability alerts (the default preset disables them).                           |
+| `lockfile-maintenance-auto`   | `local>brave/renovate-config:lockfile-maintenance-auto`   | [`lockfile-maintenance-auto.json`](lockfile-maintenance-auto.json)         | Enables lockfile maintenance PRs on the default schedule. Merging remains manual.                      |
+| `lockfile-maintenance-manual` | `local>brave/renovate-config:lockfile-maintenance-manual` | [`lockfile-maintenance-manual.json`](lockfile-maintenance-manual.json)     | Same as above, but each lockfile maintenance run must be opted into via the dependency dashboard.      |
+
 ## Development
 
 ### Prerequisites

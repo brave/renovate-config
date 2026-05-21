@@ -1,0 +1,8 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Enable lockfile maintenance PRs gated behind dependency dashboard approval — each run must be opted into manually.",
+  "lockFileMaintenance": {
+    "enabled": true,
+    "dependencyDashboardApproval": true
+  }
+}
