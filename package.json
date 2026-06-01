@@ -24,6 +24,6 @@
     },
     "overrides": {
       "simple-git": "3.36.0",
-      "protobufjs": "8.0.2"
+      "protobufjs": "8.4.2"
     }
 }
