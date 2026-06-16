@@ -20,7 +20,7 @@
     },
     "homepage": "https://github.com/brave/renovate-config#README.md",
     "dependencies": {
-        "renovate": "43.209.3"
+        "renovate": "43.216.3"
     },
     "overrides": {
       "simple-git": "3.36.0",
