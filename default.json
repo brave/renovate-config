@@ -6,7 +6,7 @@
       ":pinDevDependencies"
   ],
   "branchNameStrict": true,
-  "postUpdateOptions": ["gomodTidyE"],
+  "postUpdateOptions": ["gomodTidyAll"],
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "major", "patch", "pin", "pinDigest", "digest"],
