@@ -24,9 +24,12 @@ jobs:
           with:
             node-version: '24.x'
 
+        - name: Enable corepack
+          run: corepack enable
+
         - name: Validate Renovate configs
           run: |
-            npx --yes --package renovate -- renovate-config-validator \
+            pnpm dlx --package renovate -- renovate-config-validator \
               default.json lockfile-*.json enable-*.json
 
     needs_migration:
@@ -39,7 +42,10 @@ jobs:
           with:
             node-version: '24.x'
 
+        - name: Enable corepack
+          run: corepack enable
+
         - name: Validate Renovate configs
           run: |
-            npx --yes --package renovate -- renovate-config-validator --strict \
+            pnpm dlx --package renovate -- renovate-config-validator --strict \
               default.json lockfile-*.json enable-*.json
