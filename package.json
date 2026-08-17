@@ -2,8 +2,9 @@
     "name": "renovate-config",
     "version": "1.0.0",
     "description": "Renovate configuration for Brave projects",
+    "packageManager": "pnpm@11.22.0",
     "scripts": {
-        "test": "npx --yes --package renovate -- renovate-config-validator --strict default.json"
+        "test": "pnpm dlx --package renovate -- renovate-config-validator --strict default.json lockfile-*.json enable-*.json"
     },
     "repository": {
         "type": "git",
@@ -21,9 +22,5 @@
     "homepage": "https://github.com/brave/renovate-config#README.md",
     "dependencies": {
         "renovate": "43.285.4"
-    },
-    "overrides": {
-      "simple-git": "3.36.0",
-      "protobufjs": "8.7.0"
     }
 }
