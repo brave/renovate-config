@@ -68,7 +68,7 @@ Reference a preset by appending its name after a colon, e.g.:
 ### Prerequisites
 
 - Node.js
-- npm
+- pnpm (activated via Corepack; the version is pinned by the `packageManager` field in `package.json`)
 
 ### Setup
 
@@ -79,14 +79,15 @@ Reference a preset by appending its name after a colon, e.g.:
 
 2. Install dependencies:
    ```bash
-   npm install
+   corepack enable
+   pnpm install
    ```
 
 ### Testing
 
 Run the configuration validator:
 ```bash
-npm test
+pnpm test
 ```
 
 ## Contributing
