@@ -1,7 +1,9 @@
 overrides:
-    simple-git: 3.36.0
-    protobufjs: 8.7.0
+  simple-git: 3.36.0
+  protobufjs: 8.7.0
+  '@types/node': 26.2.0
 allowBuilds:
     core-js-pure: true
     dtrace-provider: true
+    esbuild: true
     re2: true

@@ -3,8 +3,12 @@
     "version": "1.0.0",
     "description": "Renovate configuration for Brave projects",
     "packageManager": "pnpm@11.22.0",
+    "type": "module",
     "scripts": {
-        "test": "pnpm dlx --package renovate -- renovate-config-validator --strict default.json lockfile-*.json enable-*.json"
+        "test": "pnpm test:bdd",
+        "test:bdd": "NODE_OPTIONS=\"--import tsx\" cucumber-js",
+        "test:validator": "pnpm dlx --package renovate -- renovate-config-validator --strict default.json lockfile-*.json enable-*.json",
+        "typecheck": "tsc --noEmit"
     },
     "repository": {
         "type": "git",
@@ -22,5 +26,11 @@
     "homepage": "https://github.com/brave/renovate-config#README.md",
     "dependencies": {
         "renovate": "44.32.2"
+    },
+    "devDependencies": {
+        "@cucumber/cucumber": "^13.2.1",
+        "@types/node": "26.2.0",
+        "tsx": "^4.23.12",
+        "typescript": "^7.0.2"
     }
 }

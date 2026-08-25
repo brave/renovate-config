@@ -12,7 +12,7 @@ yarn-error.log
 *.swn
 *.bak
 *.orig
-*.sublime-*
+.sublime-*
 *.iml
 
 # Operating Systems
@@ -30,3 +30,9 @@ Desktop.ini
 # Windows
 Thumbs.db
 Desktop.ini
+
+# Local scratch
+tmp/
+
+# Build output
+dist/
