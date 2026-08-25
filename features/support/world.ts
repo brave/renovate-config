@@ -9,6 +9,7 @@ import {
   type StrictValidationOutcome,
   type ResolutionOutcome,
 } from '../../src/lib/presets.js';
+import { mergeRuleOutcome, type RuleMatchInput } from '../../src/lib/rules.js';
 
 export interface PresetFixture {
   name: string;
@@ -24,6 +25,7 @@ export class PresetWorld extends World {
   validation: StrictValidationOutcome | null = null;
   resolution: ResolutionOutcome | null = null;
   mergedConfig: Record<string, unknown> | null = null;
+  ruleOutcome: Record<string, unknown> | null = null;
 
   loadCommittedPresets(): void {
     const root = process.cwd();
@@ -70,6 +72,17 @@ export class PresetWorld extends World {
       ...this.selectedPresets.map((p) => p.config),
     );
     return this.mergedConfig;
+  }
+
+  evaluateRuleInput(input: RuleMatchInput): Record<string, unknown> {
+    if (!this.currentConfig) {
+      throw new Error('no preset selected');
+    }
+    const rules = Array.isArray(this.currentConfig.packageRules)
+      ? (this.currentConfig.packageRules as Record<string, unknown>[])
+      : [];
+    this.ruleOutcome = mergeRuleOutcome(rules, input);
+    return this.ruleOutcome;
   }
 }
 
