@@ -12,7 +12,7 @@ yarn-error.log
 *.swn
 *.bak
 *.orig
-.sublime-*
+*.sublime-*
 *.iml
 
 # Operating Systems
@@ -37,6 +37,9 @@ tmp/
 # Build output
 dist/
 dist-symbolic/
+
+# Coverage
+coverage/
 
 # Symbolic execution artifacts
 *_jalangi_*.js
