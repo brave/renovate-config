@@ -2,6 +2,22 @@ export type RuleRecord = Record<string, unknown>;
 
 export type ConfigRecord = Record<string, unknown>;
 
+function readPath(current: unknown, segments: string[]): unknown {
+  const [head, ...rest] = segments;
+  if (head === undefined) {
+    return current;
+  }
+  if (
+    typeof current !== 'object' ||
+    current === null ||
+    !Object.prototype.hasOwnProperty.call(current, head)
+  ) {
+    return undefined;
+  }
+  const next = (current as Record<string, unknown>)[head];
+  return rest.length === 0 ? next : readPath(next, rest);
+}
+
 export function effectiveOption(
   config: ConfigRecord | null | undefined,
   optionPath: string,
@@ -9,19 +25,7 @@ export function effectiveOption(
   if (!config) {
     return undefined;
   }
-  const segments = optionPath.split('.');
-  let current: unknown = config;
-  for (const segment of segments) {
-    if (
-      typeof current !== 'object' ||
-      current === null ||
-      !Object.prototype.hasOwnProperty.call(current, segment)
-    ) {
-      return undefined;
-    }
-    current = (current as Record<string, unknown>)[segment];
-  }
-  return current;
+  return readPath(config, optionPath.split('.'));
 }
 
 export interface RuleMatchInput {
@@ -95,29 +99,43 @@ export function ageSatisfies(
   }
 }
 
-function globToRegExp(pattern: string): RegExp {
-  let source = '^';
-  for (let i = 0; i < pattern.length; i++) {
-    const char = pattern[i] as string;
-    if (char === '*') {
-      if (pattern[i + 1] === '*') {
-        source += '.*';
-        i += 1;
-      } else {
-        source += '[^/]*';
-      }
-    } else {
-      source += char.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    }
+function globMatch(pattern: string, value: string): boolean {
+  if (pattern === '') {
+    return value === '';
   }
-  return new RegExp(`${source}$`);
+  const head = pattern[0] as string;
+  if (head === '*') {
+    if (pattern[1] === '*') {
+      const rest = pattern.slice(2);
+      for (let i = 0; i <= value.length; i++) {
+        if (globMatch(rest, value.slice(i))) {
+          return true;
+        }
+      }
+      return false;
+    }
+    const rest = pattern.slice(1);
+    for (let i = 0; i <= value.length; i++) {
+      if (globMatch(rest, value.slice(i))) {
+        return true;
+      }
+      if (value[i] === '/') {
+        return false;
+      }
+    }
+    return false;
+  }
+  if (value[0] !== head) {
+    return false;
+  }
+  return globMatch(pattern.slice(1), value.slice(1));
 }
 
 export function matchesPackagePattern(
   pattern: string,
   packageName: string,
 ): boolean {
-  return globToRegExp(pattern).test(packageName);
+  return globMatch(pattern, packageName);
 }
 
 function matchStringList(
