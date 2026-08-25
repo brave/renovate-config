@@ -1,0 +1,23 @@
+FROM node:21.7.2-slim
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends git ca-certificates bash python3 python3-distutils python3-setuptools make g++ \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN git clone --depth 1 https://github.com/ExpoSEJS/ExpoSE /opt/expose
+
+WORKDIR /opt/expose
+
+RUN npm install --force --no-audit --no-fund \
+    && ./scripts/setup/setup_packages \
+    && ./scripts/build/build_all
+
+WORKDIR /opt/expose/Analyser
+
+RUN npm install --force --no-audit --no-fund git+https://github.com/ExpoSEJS/z3javascript.git \
+    && cd node_modules/z3javascript \
+    && ./scripts/setup
+
+WORKDIR /work
+
+ENTRYPOINT ["/opt/expose/expoSE"]

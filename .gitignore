@@ -36,3 +36,8 @@ tmp/
 
 # Build output
 dist/
+dist-symbolic/
+
+# Symbolic execution artifacts
+*_jalangi_*.js
+*_jalangi_*.json
