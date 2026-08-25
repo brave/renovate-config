@@ -5,11 +5,13 @@
     "packageManager": "pnpm@11.22.0",
     "type": "module",
     "scripts": {
-        "test": "pnpm test:bdd && pnpm test:property",
+        "test": "pnpm test:bdd && pnpm test:property && pnpm test:semantic",
         "test:bdd": "NODE_OPTIONS=\"--import tsx\" cucumber-js",
         "test:validator": "pnpm dlx --package renovate -- renovate-config-validator --strict default.json lockfile-*.json enable-*.json",
         "test:property": "node --import tsx --test \"tests/property/*.properties.ts\"",
         "test:symbolic": "bash scripts/run-symbex.sh",
+        "test:semantic": "node --import tsx --test \"tests/semantic/*.spec.ts\"",
+        "test:coverage": "c8 pnpm test",
         "typecheck": "tsc --noEmit"
     },
     "repository": {
@@ -31,7 +33,10 @@
     },
     "devDependencies": {
         "@cucumber/cucumber": "^13.2.1",
+        "@cucumber/gherkin": "^42.0.1",
+        "@cucumber/messages": "^34.2.1",
         "@types/node": "26.2.0",
+        "c8": "^12.0.0",
         "fast-check": "^4.9.0",
         "tsx": "^4.23.12",
         "typescript": "^7.0.2"
