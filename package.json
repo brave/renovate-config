@@ -2,7 +2,7 @@
     "name": "renovate-config",
     "version": "1.0.0",
     "description": "Renovate configuration for Brave projects",
-    "packageManager": "pnpm@11.22.0",
+    "packageManager": "pnpm@12.1.0",
     "scripts": {
         "test": "pnpm dlx --package renovate -- renovate-config-validator --strict default.json lockfile-*.json enable-*.json"
     },
