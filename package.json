@@ -21,6 +21,6 @@
     },
     "homepage": "https://github.com/brave/renovate-config#README.md",
     "dependencies": {
-        "renovate": "44.32.2"
+        "renovate": "44.51.2"
     }
 }
