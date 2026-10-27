@@ -6,7 +6,7 @@ settings:
 
 overrides:
   simple-git: 4.0.2
-  protobufjs: 8.8.0
+  protobufjs: 8.8.1
 
 importers:
 
@@ -1870,8 +1870,8 @@ packages:
     resolution: {integrity: sha512-FYgfaA69XZ93zaXLoMNQ+ViDXGGBgR8aLh03txzcFhV+9xOXx7+8DLCULrKKpR9+GsH9ZfHm82aSUPpozX0Ztg==}
     engines: {node: ^22.22.2 || ^24.15.0 || >=26.0.0}
 
-  protobufjs@8.8.0:
-    resolution: {integrity: sha512-N3xhQ5yyBx3vQq4gubBfASzYhJGNzeDbjqBpu61g7UVylsN/qyffU96TKWD3GbbLOKF82VGNRNvv1+BFgE31Eg==}
+  protobufjs@8.8.1:
+    resolution: {integrity: sha512-d9e9179bjXSJdpJ3+R9fP8hzXsnKLyxTjHLG1dUzje8a27pPyXCe6PrcRtgx2rjoM3IZzHd2vAs+6J/BsO1k7Q==}
     engines: {node: '>=12.0.0'}
 
   protocols@2.0.2:
@@ -2621,7 +2621,7 @@ snapshots:
     dependencies:
       lodash.camelcase: 4.3.0
       long: 5.3.2
-      protobufjs: 8.8.0
+      protobufjs: 8.8.1
       yargs: 17.7.3
 
   '@gwhitney/detect-indent@7.0.1': {}
@@ -4555,7 +4555,7 @@ snapshots:
   proc-log@7.0.0:
     optional: true
 
-  protobufjs@8.8.0:
+  protobufjs@8.8.1:
     dependencies:
       long: 5.3.2
 
@@ -4735,7 +4735,7 @@ snapshots:
       p-throttle: 8.1.1
       parse-link-header: 2.0.0
       prettier: 3.9.10
-      protobufjs: 8.8.0
+      protobufjs: 8.8.1
       punycode: 2.3.1
       remark: 15.0.1(supports-color@7.2.0)
       remark-gfm: 4.0.1(supports-color@7.2.0)

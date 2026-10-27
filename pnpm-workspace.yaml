@@ -1,6 +1,6 @@
 overrides:
     simple-git: 4.0.2
-    protobufjs: 8.8.0
+    protobufjs: 8.8.1
 allowBuilds:
     core-js-pure: true
     dtrace-provider: true
